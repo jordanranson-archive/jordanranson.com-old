@@ -1,0 +1,10 @@
+body, button {
+    font-family: monospace;
+}
+li {
+    min-height: 2em;
+    line-height: 2em;
+}
+li:hover {
+    background: khaki;
+}

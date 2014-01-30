@@ -1,0 +1,23 @@
+{
+  "name": "basic",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SAMdesk/sam-apps",
+  "authors": [
+    "Jordan Ranson <jordan@jordanranson.com>"
+  ],
+  "description": "A basic SAM application",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sam-js": "https://github.com/SAMdesk/sam-js.git",
+    "jquery": "~2.0.3"
+  }
+}
