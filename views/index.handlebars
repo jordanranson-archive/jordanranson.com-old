@@ -1,0 +1,155 @@
+<!--
+id: 52c709eda2f6442b08000024
+authorAvatarUrl: http://pbs.twimg.com/profile_images/3081561286/1aa10055278299b7b9e81fc43e2cc528_normal.jpeg
+authorDisplayName: GFreemanResist
+authorName: Gordon Freeman
+authorId: 961750514
+longText: RT @Excalibuurne: Oh putain c'était énorme XDDDD #Gmod @irochi330 http://t.co/3KjZ21mDJc
+shortText: RT @Excalibuurne: Oh putain c'était énorme XDDDD #Gmod @irochi330 http://t.co/3KjZ21mDJc
+postedDate: 1388760639000
+socialType: twitter
+publicId: 419118614961471488
+tags:
+media:
+    mediaType: "image"
+    mediaUrl: "http://pbs.twimg.com/media/BdD_0UaCYAAbUZo.jpg"
+    socialType: "twitter"
+    thumbnailUrl: "http://pbs.twimg.com/media/BdD_0UaCYAAbUZo."
+created: 2014-01-03T19:05:17.351Z
+-->
+
+<div class="wrapper stream">
+    <div class="content">
+
+        {{#each months}}
+
+            <h2>{{month}} <span>{{year}}</span></h2>
+
+            {{#each assets}}
+
+                {{#if important}}
+                    {{#if asset.media}}
+                    <section class="article">
+                        <div class="media left" style="background-image:url('{{asset.media.0.mediaUrl}}')"></div>
+                        <article class="right">
+                            <h3>{{title}}</h3>
+                            <p>{{{body}}}</p>
+                            <footer>
+                                <!--<a href="{{href}}" target="_blank">Check it out</a>-->
+                                <var>{{day}}</var>
+                            </footer>
+                        </article>
+                    </section>
+                    {{else}}
+                    <section class="article">
+                        <article>
+                            <h3>{{title}}</h3>
+                            <p>{{{body}}}</p>
+                            <footer>
+                                <!--<a href="{{href}}" target="_blank">Check it out</a>-->
+                                <var>{{day}}</var>
+                            </footer>
+                        </article>
+                    </section>
+                    {{/if}}
+                {{/if}}
+
+                {{#if normal}}
+                    {{#if asset.media}}
+                    <section class="tweet">
+                        <div class="media left" style="background-image:url('{{asset.media.0.mediaUrl}}')"></div>
+                        <article class="right">
+                            <h3>@{{asset.authorDisplayName}}</h3>
+                            <p>{{{asset.longText}}}</p>
+                            <footer>
+                                <var>{{day}}</var>
+                            </footer>
+                        </article>
+                    </section>
+                    {{else}}
+                    <section class="tweet">
+                        <article>
+                            <h3>@{{asset.authorDisplayName}}</h3>
+                            <p>{{{asset.longText}}}</p>
+                            <footer>
+                                <var>{{day}}</var>
+                            </footer>
+                        </article>
+                    </section>
+                    {{/if}}
+                {{/if}}
+
+                {{#if highlight}}
+                    {{#if asset.media}}
+                    <section class="media">
+                        <div class="media" style="background-image:url('{{asset.media.0.mediaUrl}}')">
+                            <var class="stamped">{{day}}</var>
+                        </div>
+                    </section>
+                    {{else}}
+                    <section class="tweet">
+                        <article>
+                            <h3>@{{asset.authorDisplayName}}</h3>
+                            <p>{{{asset.longText}}}</p>
+                            <footer>
+                                <var>{{day}}</var>
+                            </footer>
+                        </article>
+                    </section>
+                    {{/if}}
+                {{/if}}
+
+                <hr>
+
+            {{/each}}
+
+        {{/each}}
+
+        {{! <section class="gallery">
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <div class="media"></div>
+            <var class="stamped">07</var>
+        </section> --}}
+
+    </div>
+</div>
+
+<div class="wrapper projects">
+    <div class="content">
+
+        <h2>Projects</h2>
+
+        <section class="article">
+            <div class="media left"></div>
+            <article class="right">
+                <h3>SAM</h3>
+                <p>Phasellus ligula sem, laoreet luctus luctus sed, pharetra in mi. Aenean accumsan gravida convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                <footer>
+                    <a href="http://www.samdesk.io" target="_blank">www.samdesk.io</a>
+                </footer>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="article">
+            <div class="media left"></div>
+            <article class="right">
+                <h3>Party Play</h3>
+                <p>Phasellus ligula sem, laoreet luctus luctus sed, pharetra in mi. Aenean accumsan gravida convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                <footer>
+                    <a href="http://partyplay.jordanranson.com" target="_blank">partyplay.jordanranson.com</a>
+                </footer>
+            </article>
+        </section>
+
+        <hr>
+
+    </div>
+</div>

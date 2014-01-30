@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "sam-js": "https://github.com/SAMdesk/sam-js.git",
-    "jquery": "~2.0.3"
+    "jquery": "~2.0.3",
+    "prefix-free": "gh-pages"
   }
 }

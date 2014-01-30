@@ -7,10 +7,11 @@ var PORT       = 3001,
     APP_SECRET = 'ssh-secret';
 
 var express = require('express'),
+    exphbs  = require('express3-handlebars'),
     http    = require('http'),
     path    = require('path'),
-    routes  = require('./routes/routes.js'),
     api     = require('./routes/api.js')(APP_KEY, APP_SECRET),
+    routes  = require('./routes/routes.js')(api.api, '52c709e3a2f6442b08000020'),
     app     = express();
 
 
@@ -29,7 +30,9 @@ app.configure(function() {
     app.use(app.router);
     app.use(express.static(__dirname + '/public'));
 
-    app.set('view engine', 'ejs');
+    //app.set('view engine', 'ejs');
+    app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+    app.set('view engine', 'handlebars');
 
     // For development purposes only
     if (app.get('env') === 'development') {

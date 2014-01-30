@@ -22,7 +22,8 @@ function ApiRoutes(key, secret) {
 
     return {
         stories: stories,
-        story: story
+        story: story,
+        api: sam
     };
 
 };
