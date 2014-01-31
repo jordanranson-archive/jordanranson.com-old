@@ -1,5 +1,27 @@
 function PublicRoutes(sam, storyId) {
 
+    function sortDate(arr) {
+        arr.sort(function(a, b) {
+            var keyA = a.asset.postedDate,
+                keyB = b.asset.postedDate;
+
+            if(keyA < keyB) return 1;
+            if(keyA > keyB) return -1;
+            return 0;
+        });
+    }
+
+    function sortMonth(arr) {
+        arr.sort(function(a, b) {
+            var keyA = a.monthVal,
+                keyB = b.monthVal;
+
+            if(keyA < keyB) return 1;
+            if(keyA > keyB) return -1;
+            return 0;
+        });
+    }
+
     function index(req, res){
         sam.stories.fetch(
             storyId,
@@ -35,6 +57,7 @@ function PublicRoutes(sam, storyId) {
                     if(month === undefined) {
                         months[monthStrings[date.getMonth()]] = {
                             month: monthStrings[date.getMonth()],
+                            monthVal: date.getTime(),
                             year: date.getFullYear(),
                             assets: []
                         };
@@ -74,7 +97,16 @@ function PublicRoutes(sam, storyId) {
                     }
                 }
 
-                res.render('index', { story: data, months: months });
+                var sortedMonths = [];
+                for(var x in months) {
+                    sortedMonths.push(months[x]);
+                }
+                sortMonth(sortedMonths);
+
+                for(var i = 0; i < sortedMonths.length; i++) {
+                    sortDate(sortedMonths[i].assets);
+                }
+                res.render('index', { story: data, months: sortedMonths });
             }
         );
     }

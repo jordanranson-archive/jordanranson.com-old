@@ -84,7 +84,7 @@ window.onload = function() {
 	});
 
 	$content.on( 'click', 'section:not(.tweet,.gallery)', function( evt ) {
-		//clone( this );
+		clone( this );
 	});
 
 	$( '.top-btn' ).on( 'click', function( evt ) {
@@ -121,6 +121,7 @@ window.onload = function() {
         $('.nav-right').removeClass('out');
 
         $('.stream').removeClass('out');
+
         $('.projects').removeClass('in');
 
         setTimeout(function() {
@@ -142,19 +143,19 @@ window.onload = function() {
         },500);
     });
 
-    window.onscroll = function(e) {
-        var $this = $(this);
-        var scrollTop = document.body.scrollTop;
-
-        if( scrollTop === 0 ) {
-            $('.nav-top').removeClass('out');
-            $('.nav-bottom').addClass('out');
-        }
-        else {
-            $('.nav-top').addClass('out');
-            $('.nav-bottom').removeClass('out');
-        }
-    }
+//    window.onscroll = function(e) {
+//        var $this = $(this);
+//        var scrollTop = document.body.scrollTop;
+//
+//        if( scrollTop === 0 ) {
+//            $('.nav-top').removeClass('out');
+//            $('.nav-bottom').addClass('out');
+//        }
+//        else {
+//            $('.nav-top').addClass('out');
+//            $('.nav-bottom').removeClass('out');
+//        }
+//    }
 
 	// start animating that shit
 	/*now = new Date().getTime() / 30000;
