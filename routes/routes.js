@@ -53,6 +53,11 @@ function PublicRoutes(sam, storyId) {
                     month = months[monthStrings[date.getMonth()]];
                     day = date.getDate() < 10 ? '0'+ date.getDate() : date.getDate();
 
+                    // Instagram date fix hack
+                    if(asset.socialType === 'instagram') {
+                        asset.postedDate *= 1000;
+                    }
+
                     // Create a new month if doesn't exist
                     if(month === undefined) {
                         months[monthStrings[date.getMonth()]] = {
