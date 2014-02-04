@@ -1,5 +1,8 @@
 function PublicRoutes(sam, storyId) {
 
+    var twitter = require('twitter-text'),
+        urlexpand = require('urlexpand');
+
     function sortDate(arr) {
         arr.sort(function(a, b) {
             var keyA = a.asset.postedDate,
@@ -58,6 +61,10 @@ function PublicRoutes(sam, storyId) {
                         asset.postedDate *= 1000;
                     }
 
+                    if(asset.socialType === 'twitter') {
+                        asset.longText = twitter.autoLink(twitter.htmlEscape(asset.longText));
+                    }
+
                     // Create a new month if doesn't exist
                     if(month === undefined) {
                         months[monthStrings[date.getMonth()]] = {
@@ -73,7 +80,7 @@ function PublicRoutes(sam, storyId) {
                         if(asset.tags[0] === 'Important') {
                             var title = asset.longText.split('.')[0];
                             var body = asset.longText.slice(asset.longText.indexOf('.')+2,asset.longText.length);
-                                //body = body.slice(0,body.indexOf('http://'));
+                            //body = body.slice(0,body.indexOf('http://'));
                             //var href = asset.longText.slice(asset.longText.indexOf('http://'),asset.longText.length);
 
                             month.assets.push({
