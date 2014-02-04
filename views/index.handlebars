@@ -55,6 +55,31 @@ created: 2014-01-03T19:05:17.351Z
                     {{/if}}
                 {{/if}}
 
+                {{#if verified}}
+                    {{#if asset.media}}
+                        <section class="tweet">
+                            <div class="media left" style="background-image:url('{{asset.media.0.mediaUrl}}')"></div>
+                            <article class="right">
+                                <h3>via <em>{{asset.socialType}}</em></h3>
+                                <p>{{{asset.longText}}}</p>
+                                <footer>
+                                    <var>{{day}}</var>
+                                </footer>
+                            </article>
+                        </section>
+                    {{else}}
+                        <section class="tweet">
+                            <article>
+                                <h3>via <em>{{asset.socialType}}</em></h3>
+                                <p>{{{asset.longText}}}</p>
+                                <footer>
+                                    <var>{{day}}</var>
+                                </footer>
+                            </article>
+                        </section>
+                    {{/if}}
+                {{/if}}
+
                 {{#if normal}}
                     {{#if asset.media}}
                     <section class="tweet">
@@ -131,7 +156,11 @@ created: 2014-01-03T19:05:17.351Z
             <div class="media left spinner"></div>
             <article class="right spinner">
                 <h3>SAM</h3>
-                <p>Phasellus ligula sem, laoreet luctus luctus sed, pharetra in mi. Aenean accumsan gravida convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                <p>
+                    SAM is an enterprise-level social asset management platform targeted towards journalists and other
+                    media professionals.
+                </p>
+                <p class="stat"><strong>Roles</strong> UX Designer, Developer</p>
                 <footer>
                     <a href="http://www.samdesk.io" target="_blank">www.samdesk.io</a>
                 </footer>
@@ -141,10 +170,14 @@ created: 2014-01-03T19:05:17.351Z
         <hr>
 
         <section class="article">
-            <div class="media left"></div>
+            <div class="media left" style="background-position: 0 center;background-image:url('http://i.imgur.com/OrEsaMn.png')"></div>
             <article class="right">
                 <h3>Party Play</h3>
-                <p>Phasellus ligula sem, laoreet luctus luctus sed, pharetra in mi. Aenean accumsan gravida convallis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.</p>
+                <p>
+                    Party Play is an application built off the Rdio API and Socket.io which allows Rdio subscribers to
+                    curate and stream playlists to groups of people. Currently in alpha.
+                </p>
+                <p class="stat">Personal Project</p>
                 <footer>
                     <a href="http://partyplay.jordanranson.com" target="_blank">partyplay.jordanranson.com</a>
                 </footer>

@@ -640,8 +640,23 @@ section {
 			font-size: 16pt;
 			font-weight: 700;
 			color: @red;
-			cursor: pointer;
+
+            em {
+                color: @white;
+                text-transform: capitalize;
+                font-style: normal;
+            }
 		}
+
+        .stat {
+            color: @white;
+            font-size: 80%;
+
+            strong {
+                font-weight: bold;
+                color: @red;
+            }
+        }
 
 		footer {
             overflow: hidden;

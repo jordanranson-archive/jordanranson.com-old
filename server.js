@@ -2,7 +2,7 @@
  * Setup and module dependencies
  */
 
-var PORT       = 3001,
+var PORT       = 3000,
     APP_KEY    = '1puqINX0vrCYGDL6',
     APP_SECRET = 'hfu3s2kvLvfdpU4tV3YINaaqm0Q72N58';
 
@@ -12,7 +12,7 @@ var express = require('express'),
     path    = require('path'),
     api     = require('./routes/api.js')(APP_KEY, APP_SECRET),
     routes  = require('./routes/routes.js')(api.api, '52f07df74ba4c5962fc6366f'),
-    app     = express();
+    app     = exports.app = express();
 
 
 /**

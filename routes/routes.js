@@ -1,7 +1,6 @@
 function PublicRoutes(sam, storyId) {
 
-    var twitter = require('twitter-text'),
-        urlexpand = require('urlexpand');
+    var twitter = require('twitter-text');
 
     function sortDate(arr) {
         arr.sort(function(a, b) {
@@ -88,6 +87,13 @@ function PublicRoutes(sam, storyId) {
                                 title: title,
                                 body: body,
                                 //href: href,
+                                day: day,
+                                asset: asset
+                            });
+                        }
+                        if(asset.tags[0] === 'Verified') {
+                            month.assets.push({
+                                verified: true,
                                 day: day,
                                 asset: asset
                             });

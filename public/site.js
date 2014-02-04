@@ -118,44 +118,45 @@ window.onload = function() {
         e.preventDefault();
 
         $('.nav-left').addClass('out');
-        $('.nav-right').removeClass('out');
-
-        $('.stream').removeClass('out');
-
         $('.projects').removeClass('in');
+        $('.nav-bottom').addClass('out');
 
         setTimeout(function() {
+            $('.nav-top').removeClass('out');
             $('body').animate({scrollTop: 0}, 0);
-        },500);
+            $('.nav-right').removeClass('out');
+            $('.stream').removeClass('out');
+        },1000);
     });
 
     $('.nav-right').on('click', function(e) {
         e.preventDefault();
 
         $('.nav-right').addClass('out');
-        $('.nav-left').removeClass('out');
-
-        $('.projects').addClass('in');
         $('.stream').addClass('out');
+        $('.nav-bottom').addClass('out');
 
         setTimeout(function() {
+            $('.nav-top').removeClass('out');
             $('body').animate({scrollTop: 0}, 0);
-        },500);
+            $('.nav-left').removeClass('out');
+            $('.projects').addClass('in');
+        },1000);
     });
 
-//    window.onscroll = function(e) {
-//        var $this = $(this);
-//        var scrollTop = document.body.scrollTop;
-//
-//        if( scrollTop === 0 ) {
-//            $('.nav-top').removeClass('out');
-//            $('.nav-bottom').addClass('out');
-//        }
-//        else {
-//            $('.nav-top').addClass('out');
-//            $('.nav-bottom').removeClass('out');
-//        }
-//    }
+    window.onscroll = function(e) {
+        var $this = $(this);
+        var scrollTop = document.body.scrollTop;
+
+        if( scrollTop === 0 ) {
+            $('.nav-top').removeClass('out');
+            $('.nav-bottom').addClass('out');
+        }
+        else {
+            $('.nav-top').addClass('out');
+            $('.nav-bottom').removeClass('out');
+        }
+    }
 
 	// start animating that shit
 	/*now = new Date().getTime() / 30000;
